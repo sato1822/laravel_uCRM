@@ -6,9 +6,14 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\InertiaTestController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\CustomerController;
 
-Route::resource('/items',ItemsController::class )
+
+Route::resource('items',ItemsController::class )
 ->middleware(['auth', 'verified']);
+Route::resource('customer',CustomerController::class )
+->middleware(['auth', 'verified']);
+
 
 Route::get('/inertia-test', function () {
   return Inertia::render('InertiaTest');
