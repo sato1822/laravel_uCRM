@@ -22,7 +22,7 @@ class ItemsSeeder extends Seeder
           'price'=>6000
         ],
         [
-          'name'=>'カット',
+          'name'=>'カラー',
           'memo'=>'カラーの詳細',
           'price'=>8000
         ],

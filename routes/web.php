@@ -7,10 +7,15 @@ use Inertia\Inertia;
 use App\Http\Controllers\InertiaTestController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PurchaseController;
 
+
+Route::resource('purchases',PurchaseController::class )
+->middleware(['auth', 'verified']);
 
 Route::resource('items',ItemsController::class )
 ->middleware(['auth', 'verified']);
+
 Route::resource('customer',CustomerController::class )
 ->middleware(['auth', 'verified']);
 
