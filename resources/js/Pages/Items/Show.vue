@@ -1,7 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link, router } from '@inertiajs/vue3';
-import { nl2br } from '../common';
+import { nl2br } from '@/common';
 
 defineProps({
   item : Object

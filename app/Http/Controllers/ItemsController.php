@@ -57,7 +57,7 @@ class ItemsController extends Controller
      * @param  \App\Models\Items  $items
      * @return \Illuminate\Http\Response
      */
-    public function show(Items $item)
+    public function show(Items $item)//ここでitemsと紐付けているためidの情報を取得している
     {
         return Inertia::render('Items/Show',[
           "item" => $item
