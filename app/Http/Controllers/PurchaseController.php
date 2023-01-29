@@ -135,6 +135,7 @@ class PurchaseController extends Controller
             // dd($allItem, $item);
             if($allItem->id === $item->id){
               $quantity = $item->pivot->quantity;
+              // dd($quantity);
             }
           }
           array_push($items, [
@@ -169,7 +170,9 @@ class PurchaseController extends Controller
     public function update(UpdatePurchaseRequest $request, Purchase $purchase)
     {
       DB::beginTransaction();
+      
       try{
+        dd($purchase->items[0]->pivot->quantity);
         $purchase->status = $request->status;
           $purchase->save();
           
@@ -186,7 +189,7 @@ class PurchaseController extends Controller
 
           $purchase->items()->sync($items);
           DB::commit();
-          
+
           return to_route('dashboard');
           
         } catch (\Exception $e){
